@@ -1,0 +1,1568 @@
+/* ==========================
+   GLOBAL RESET / BASE
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #222;
+    background: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Utility */
+.section-title {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* ==========================
+        NAVBAR
+========================== */
+/* ================= NAVBAR ================ */
+.header {
+    background: #fff8f3;
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+}
+
+/* ================= HERO BANNER (Reduced Width) ================ */
+.hero-banner {
+    position: relative;
+    width: 90%;               /* Reduced banner width */
+    max-width: 1100px;        /* Final size limit */
+    margin: 40px auto;        /* Center horizontally */
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* Background Image */
+.hero-bg-img {
+    width: 100%;
+    height: 350px;            /* Reduce height too */
+    object-fit: cover;
+    display: block;
+}
+
+/* Text */
+.hero-content {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    z-index: 3;
+    color: white;
+    max-width: 300px;
+}
+
+.hero-content h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.hero-content p {
+    margin: 8px 0 12px;
+    font-size: 14px;
+}
+
+.hero-btn {
+    background: #ff8c00;
+    padding: 10px 20px;
+    border-radius: 22px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Doctor image overlay */
+.hero-doctor {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 260px;             /* Reduced doctor size */
+    z-index: 4;
+}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width: 768px) {
+
+    .hero-banner {
+        width: 95%;
+        max-width: 420px;
+    }
+
+    .hero-bg-img {
+        height: 260px;
+    }
+
+    .hero-content {
+        top: 12%;
+        left: 6%;
+        max-width: 240px;
+    }
+
+    .hero-content h2 {
+        font-size: 18px;
+    }
+
+    .hero-doctor {
+        width: 180px;
+        right: 5px;
+    }
+}
+
+
+
+/* Right actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 999px;
+}
+
+.book-btn {
+    background: linear-gradient(90deg, #ff9b34, #ff6b00);
+    color: #fff;
+}
+
+.phone-btn {
+    background: #ffffff;
+    border: 2px solid #462f1e;
+    color: #2d1c10;
+}
+
+/* Optional hamburger/nav-menu if used */
+.hamburger {
+    display: none;
+}
+
+/* ==========================
+        HERO SECTION
+========================== */
+.hero {
+    background: #f8f9fa;
+    padding: 30px 0 10px;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* LEFT SIDE - Image + overlay text */
+.hero-left {
+    flex: 1;
+    position: relative;
+}
+
+.hero-main-img {
+    width: 100%;
+    border-radius: 12px;
+    max-height: 380px;
+    object-fit: cover;
+}
+
+.hero-left-text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    max-width: 350px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.hero-left-text h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.hero-left-text p {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.hero-btn {
+    background: #ff8800;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* RIGHT SIDE - Small hero form */
+.hero-right {
+    flex: 1;
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.hero-right h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.hero-form input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.hero-form-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff8800;
+    border-radius: 999px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* HERO STATS (static items) */
+.hero-scroll {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 16px 0 10px;
+    background: #fff;
+}
+
+.scroll-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f5f5;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ==========================
+        ABOUT SECTION
+========================== */
+.about {
+    padding: 70px 0;
+    background: #f8f9fa;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+    font-weight: 800;
+}
+
+.about-text p {
+    color: #555;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    border-radius: 12px;
+    max-width: 450px;
+    margin-left: auto;
+}
+
+/* ==========================
+   REAL SMILES SECTION
+========================== */
+.real-smiles {
+    padding: 70px 0;
+    text-align: center;
+}
+
+.real-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.real-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+.smiles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.real-smiles {
+    padding: 70px 0;
+    text-align: center;          /* Center-align headings */
+}
+
+.smiles-grid {
+    display: flex;
+    justify-content: center;     /* Center-align images row */
+    gap: 30px;
+    flex-wrap: wrap;             /* Responsive */
+    margin-top: 30px;
+}
+
+.smile-item {
+    text-align: center;          /* Center-align name/city */
+}
+
+
+.smile-name {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.smile-city {
+    font-size: 13px;
+    color: #ff8c00;
+}
+
+/* ==========================
+   ROOT CANAL SECTION
+========================== */
+.rct-types {
+    padding: 70px 0;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.rct-main-title {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.rct-main-subtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Two cards next to each other */
+.rct-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Single RCT card */
+.rct-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.rct-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.rct-info {
+    padding: 22px;
+    text-align: left;
+}
+
+.rct-info h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.rct-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.rct-info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.rct-info ul {
+    padding-left: 18px;
+    margin-bottom: 12px;
+}
+
+.rct-info ul li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+/* Price + button */
+.price-label, .rct-price {
+    font-size: 13px;
+    color: #ff8800;
+    font-weight: 600;
+}
+
+.price-value, .rct-price-value {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.rct-btn {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff9800, #ff6e00);
+    border-radius: 999px;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ==========================
+   WHY CHOOSE SECTION
+========================== */
+.choose-section {
+    padding: 70px 0;
+}
+
+.choose-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.choose-left {
+    flex: 1;
+}
+
+.choose-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.choose-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.choose-list {
+    list-style: none;
+}
+
+.choose-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.choose-list li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: -2px;
+    font-weight: 800;
+    color: #ff7a00;
+    font-size: 18px;
+}
+
+.choose-right {
+    flex: 1;
+}
+
+.choose-right img {
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ==========================
+   WHAT PATIENTS SAY
+========================== */
+/* ===============================
+   WHAT OUR PATIENTS SAY SECTION
+================================*/
+.patients-say {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.patients-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.patients-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+/* Grid Layout */
+.patients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-items: center;        /* Center cards this fixes alignment */
+}
+
+/* Patient Card */
+.patient-card {
+    text-align: center;
+    width: 200px;
+}
+
+/* Image Styling */
+.patient-card img {
+    width: 200px;
+    height: 240px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Name */
+.p-name {
+    font-size: 17px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #000;
+}
+
+/* City */
+.p-location {
+    font-size: 14px;
+    color: #555;
+    margin-top: 2px;
+}
+
+/* Treatment — CORAL RED */
+.p-treatment {
+    font-size: 14px;
+    color: #FF6F61;      /* Coral color */
+    font-weight: 700;
+    margin-top: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .patients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .patient-card {
+        width: 160px;
+    }
+
+    .patient-card img {
+        width: 160px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .patients-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ==========================
+ SAFETY & INNOVATION SECTION
+========================== */
+.safety-section {
+    padding: 60px 0;
+}
+
+.safety-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.safety-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.safety-subtitle {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+.safety-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.safety-card {
+    width: 360px;
+    background: #091A29;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.safety-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.safety-card-content {
+    padding: 18px 20px;
+    text-align: left;
+    color: #fff;
+}
+
+.safety-card-content h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.safety-card-content p {
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+.learn-more {
+    margin-top: 10px;
+    display: inline-block;
+    color: #ff8c00;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ==========================
+   APPOINTMENT STRIP
+========================== */
+.appointment-section {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+}
+
+.appointment-box {
+    width: 100%;
+    max-width: 1300px;
+    background: #FFF7F1;
+    padding: 28px 34px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.appointment-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.appointment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 14px;
+}
+
+.input-field,
+.captcha-input {
+    padding: 12px 16px;
+    border: 1px solid #ffddb8;
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.captcha-wrapper {
+    display: flex;
+    align-items: center;
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid #ffddb8;
+}
+
+.captcha-value {
+    background: #3A1E05;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: 700;
+}
+
+.book-btn {
+    background: #ff8f1f;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.terms-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* Shared checkbox style */
+.checkbox-right {
+    display: flex;
+    justify-content: space-between;   /* text left, checkbox right */
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #777;
+}
+
+.checkbox-right input {
+    width: 16px;
+    height: 16px;
+    accent-color: #ff8c00;  /* optional: orange checkmark */
+}
+
+.checkbox-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.checkbox-line input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-line span {
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap; /* keeps text on same line */
+}
+
+/* ==========================
+  GOOGLE REVIEWS SECTION
+========================== */
+.google-reviews-box {
+    background: #FFF7F1;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+.google-reviews-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.google-rating {
+    text-align: center;
+    width: 200px;
+}
+
+.google-rating h3 {
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+
+.ratings-count {
+    font-size: 16px;
+    color: #ff8c00;
+    font-weight: 700;
+}
+
+.ratings-text {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Review cards */
+.review-cards {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    width: 250px;
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+    text-align: left;
+}
+
+.reviewer-img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 8px;
+}
+
+.google-corner-logo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 62px;
+    height: 62px;
+    background: #FFE9C9;
+    border-bottom-left-radius: 80px;
+    border-top-right-radius: 12px;
+    padding: 10px;
+}
+
+.stars {
+    color: #ffb800;
+    font-size: 14px;
+    margin: 4px 0;
+}
+
+.review-text {
+    font-size: 13px;
+    color: #555;
+}
+
+/* ==========================
+    FIND US ACROSS INDIA
+========================== */
+.findus-section {
+    padding: 60px 0;
+}
+
+.findus-title {
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.findus-subtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.findus-wrapper {
+    display: flex;
+    gap: 32px;
+}
+
+/* left: city cards */
+.city-grid {
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.city-card {
+    border: 1px solid #e5e5e5;
+    padding: 14px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+
+.city-card img {
+    width: 32px;
+    margin-bottom: 6px;
+}
+
+.city-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.city-card p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* right: clinic images */
+.clinic-images {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.clinic-images img {
+    border-radius: 12px;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* ===============================
+   THREE-BOX SECTION (Awareness + Plan + Form)
+================================= */
+.three-box-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.box-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    display: flex;
+}
+
+.health-form,
+.health-plan,
+.image-box {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 18px 18px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Awareness image */
+.image-box img,
+.awareness-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;   /* remove rounding */
+    box-shadow: none;   /* remove shadow */
+}
+.image-box {
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+    text-align: center; /* centers button */
+}
+
+/* Awareness image full width */
+.image-box img {
+    width: 100%;
+    display: block;
+}
+
+/* Button under image */
+.image-btn {
+    background: #ff8c00;
+    color: #fff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    margin: 18px auto 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.image-btn:hover {
+    background: #e57b00;
+}
+.three-box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.box-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Make button area sit at bottom */
+.form-box button,
+.image-box .image-btn,
+.plan-box .buy-btn {
+    margin-top: auto !important;
+}
+.form-box button,
+.image-box .image-btn,
+.plan-box .buy-btn {
+    width: 80%;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #ff8c00;
+    border: none;
+    border-radius: 25px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .awareness-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 10px;
+} */
+
+/* Plan card */
+.health-plan {
+    background: #fff7eb;
+    border: 1px solid #ffd8a8;
+}
+
+.health-plan h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.health-plan ul {
+    padding-left: 18px;
+    margin: 8px 0 12px;
+}
+
+.health-plan ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.price-box {
+    margin: 8px 0;
+}
+
+.buy-btn {
+    background: #ff8c00;
+    color: #fff;
+    border-radius: 999px;
+    padding: 10px 18px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Form card */
+.health-form h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.health-form p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.health-form input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.health-form button {
+    background: #ff8c00;
+    padding: 11px;
+    border-radius: 999px;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+/* ==========================
+        FAQ SECTION
+========================== */
+.faq-section {
+    padding: 40px 0 60px;
+    background: #ffffff;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.faq-container {
+    display: flex;
+    gap: 30px;
+}
+
+.faq-column {
+    flex: 1;
+}
+
+.faq-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.faq-icon {
+    color: #ff6d00;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ==========================
+        FOOTER
+========================== */
+.footer {
+    background: #1c1c1c;
+    color: #fff;
+    padding: 45px 0 24px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.footer-left {
+    max-width: 360px;
+}
+
+.footer-left .logo img {
+    width: 70px;
+    margin-bottom: 12px;
+}
+
+.footer-desc {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 6px;
+}
+
+/* Bottom mini footer */
+.site-footer {
+    background: #111;
+    border-top: 1px solid #333;
+    text-align: center;
+    padding: 12px 0;
+    color: #bbb;
+    font-size: 13px;
+}
+
+.site-footer strong {
+    color: #ff8c00;
+}
+
+/* ==========================
+        POPUP FORM
+========================== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;          /* shown via JS */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.55);
+    z-index: 9999;
+    padding: 20px;
+}
+
+.popup-box {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 26px 24px 24px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    animation: popupFade 0.25s ease;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #555;
+}
+
+.popup-title {
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.popup-subtitle {
+    font-size: 13px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.popup-box input,
+.popup-box select {
+    width: 100%;
+    padding: 11px 13px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Submit button */
+.popup-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff8c00;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+@keyframes popupFade {
+    from { transform: scale(0.85); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================
+      RESPONSIVE RULES
+========================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-left-text {
+        position: static;
+        color: #222;
+        text-shadow: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .hero-main-img {
+        max-height: 300px;
+    }
+
+    .hero-right {
+        width: 100%;
+    }
+
+    .smiles-grid,
+    .patients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .appointment-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .book-btn,
+    .captcha-wrapper {
+        grid-column: span 2;
+    }
+
+    .findus-wrapper {
+        flex-direction: column;
+    }
+
+    .city-grid {
+        width: 100%;
+    }
+
+    .three-box-container {
+        gap: 18px;
+    }
+
+    .box-item {
+        max-width: 48%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .nav-actions {
+        gap: 10px;
+    }
+
+    .hero-container {
+        gap: 20px;
+    }
+
+    .hero-main-img {
+        max-height: 260px;
+    }
+
+    .hero-left-text h1 {
+        font-size: 22px;
+    }
+
+    .hero-left-text p {
+        font-size: 13px;
+    }
+
+    .smiles-grid,
+    .patients-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rct-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .choose-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .safety-card {
+        width: 100%;
+    }
+
+    .appointment-form {
+        grid-template-columns: 1fr;
+    }
+
+    .book-btn,
+    .captcha-wrapper {
+        grid-column: span 1;
+    }
+
+    .google-reviews-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-cards {
+        justify-content: center;
+    }
+
+    .findus-wrapper {
+        flex-direction: column;
+    }
+
+    .clinic-images img {
+        height: 190px;
+    }
+
+    .three-box-container {
+        flex-direction: column;
+    }
+
+    .box-item {
+        max-width: 100%;
+    }
+
+    .faq-container {
+        flex-direction: column;
+    }
+
+    .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-image img {
+        margin: 0 auto;
+        max-width: 80%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left .logo img {
+        margin: 0 auto 10px;
+    }
+}
+
+/* Extra small tweaks */
+@media (max-width: 480px) {
+    .google-reviews-box {
+        padding: 22px;
+    }
+
+    .appointment-box {
+        padding: 22px;
+    }
+}
+/* ================= FOOTER LOGO FIX ================= */
+footer img {
+    width: 70px !important;
+    height: 70px !important;
+    object-fit: contain !important;
+}
+
+/* ============================
+   FIX: Equal Height & Button Alignment
+============================ */
+
+.three-box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.box-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Align all 3 buttons to bottom */
+.form-box button,
+.image-box .image-btn,
+.plan-box .buy-btn {
+    margin-top: auto !important;
+    width: 80%;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #ff8c00;
+    border: none;
+    border-radius: 25px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
