@@ -1,7 +1,7 @@
 # 🦷 Prabha Dental Care – Modern Dental Clinic Website
 
 A fully responsive, modern, and user-friendly dental clinic website built using **HTML, CSS, and JavaScript**.  
-Designed as an assignment for **Unbundl**, this project demonstrates UI/UX, responsiveness, and interactive components such as popup appointment forms and animated sections.
+This project demonstrates UI/UX, responsiveness, and interactive components such as popup appointment forms and animated sections.
 
 ---
 
@@ -53,4 +53,11 @@ Designed as an assignment for **Unbundl**, this project demonstrates UI/UX, resp
 ---
 
 ## 📁 Folder Structure
-
+prabha-dental-project/
+│── assets/ → Images used throughout the site
+│── css/
+│ └── style.css → All styling (responsive + popup)
+│── js/
+│ └── script.js → Appointment popup + interactions
+│── index.html → Main webpage
+└── README.md → Project documentation
